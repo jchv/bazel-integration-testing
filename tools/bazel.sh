@@ -17,6 +17,7 @@ if [ ! -d "${INSTALL_BASE}" ]; then
   mkdir -p "${INSTALL_BASE}"
   for f in "${BASEDIR}/install_base"/*; do
     ln -s "$f" "${INSTALL_BASE}/$(basename "$f")"
+    touch -m -h -t 202101010000
   done
 fi
 
