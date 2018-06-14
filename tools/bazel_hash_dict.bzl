@@ -41,4 +41,8 @@ BAZEL_HASH_DICT = {
         "darwin-x86_64": "0bb8c1de8c58b28b498addfd67e91415b89ff9b153718079b26d972e63a11f8e",
         "linux-x86_64": "40601702fbad40cedc07c171263c41f2f13f2cb516677640550e4e424ab8f06b",
     },
+    "0.14.1": {
+        "darwin-x86_64": "00c83517b084bd407ed47cd0e4a88ee4591c0ac6d10d69790dc6992a2fd690df",
+        "linux-x86_64": "8cb405c2878ad449ed219c005f4e2a4eb106db9568e70e01fde0ca85e8cf1925",
+    },
 }
