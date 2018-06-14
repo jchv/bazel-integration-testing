@@ -1,3 +1,14 @@
 steps:
 - name: gcr.io/cloud-builders/bazel
-  args: ['test', '-k', '--test_output=all', '//...']
+  args: [
+    '--bazelrc=.bazelrc.remote',
+    'test',
+    '-k',
+    '--config=remote',
+    '--config=results',
+    '--project_id=iterating-with-google',
+    '--remote_instance_name=projects/iterating-with-google',
+    '//...'
+  ]
+
+timeout: 2700s
