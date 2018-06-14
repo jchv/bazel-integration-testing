@@ -108,3 +108,16 @@ go_repository(
 )
 
 ## Your new language here!
+
+
+# Required configuration for remote build execution
+bazel_toolchains_version="aa48867d915bdac630256946028a758e3fc501a3"
+http_archive(
+             name = "bazel_toolchains",
+             urls = [
+               "https://mirror.bazel.build/github.com/bazelbuild/bazel-toolchains/archive/%s.tar.gz"%bazel_toolchains_version,
+               "https://github.com/bazelbuild/bazel-toolchains/archive/%s.tar.gz"%bazel_toolchains_version
+             ],
+             strip_prefix = "bazel-toolchains-%s"%bazel_toolchains_version,
+)
+
