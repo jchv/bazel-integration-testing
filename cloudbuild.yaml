@@ -1,5 +1,5 @@
 steps:
 - name: gcr.io/cloud-builders/bazel
-  args: ['test', '-k', '--test_output=all', '//...']
+  args: ['test', '-k', '--test_output=all', '//javatests/build/bazel/tests/integration:WorkspaceDriverIntegrationTest/bazel0.14.1']
 
 timeout: 2700s
