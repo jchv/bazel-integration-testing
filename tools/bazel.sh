@@ -16,7 +16,7 @@ touchSpecificEntry $dir
 
 touchSpecificEntry() {
   entry=$1
-  touch -m -a -h -t 202801010000 $entry
+  touch -m -a -h -t 202801030000 $entry
   stat $entry
 }
 
