@@ -185,22 +185,14 @@ platform(
 
 def _bazel_repository_impl(rctx):
   _get_installer(rctx)
-  _extract_bazel(rctx)
   rctx.file("WORKSPACE", "workspace(name='%s')" % rctx.attr.name)
-  rctx.template("bazel.sh", Label("//tools:bazel.sh"))
   rctx.file("BUILD", """
-filegroup(
-  name = "bazel_install_base",
-  srcs = glob(["install_base/**"]),
-  visibility = ["//visibility:public"])
-
-sh_binary(
+genrule(
   name = "bazel",
-  srcs = ["bazel.sh"],
-  data = [
-      ":bazel_install_base",
-      ":bin/bazel-real",
-  ],
+  outs = ["bazel"],
+  srcs = ["bin/bazel-real"],
+  cmd = "cp $< $@",
+  output_to_bindir = True,
   visibility = ["//visibility:public"])""")
 
 bazel_binary = repository_rule(
