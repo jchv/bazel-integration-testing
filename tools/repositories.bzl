@@ -33,8 +33,8 @@ def _get_installer(rctx):
 def _extract_bazel(rctx):
   install_base = rctx.path("install_base")
   foo = install_base.get_child("_embedded_binaries").get_child("embedded_tools").get_child("platforms").get_child("BUILD")
-  rctx.file(path = foo,
-            content = """
+  rctx.file(foo,
+            """
 # Standard constraint_setting and constraint_values to be used in platforms.
 
 package(
