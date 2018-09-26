@@ -171,17 +171,17 @@ platform(
     target_platform = True,
 )
             """)
-  result = rctx.execute([
-      rctx.path("bin/bazel-real"), "--install_base",
-      rctx.path("install_base"), "version"
-  ])
-  if result.return_code != 0:
-    fail("`bazel version` returned non zero return code (%s): %s%s" %
-         (result.return_code, result.stderr, result.stdout))
-  ver = result.stdout.strip().split("\n")[0].split(":")[1].strip()
-  if ver != rctx.attr.version:
-    fail("`bazel version` returned version %s (expected %s)" %
-         (ver, rctx.attr.version))
+#  result = rctx.execute([
+#      rctx.path("bin/bazel-real"), "--install_base",
+#      rctx.path("install_base"), "version"
+#  ])
+#  if result.return_code != 0:
+#    fail("`bazel version` returned non zero return code (%s): %s%s" %
+#         (result.return_code, result.stderr, result.stdout))
+#  ver = result.stdout.strip().split("\n")[0].split(":")[1].strip()
+#  if ver != rctx.attr.version:
+#    fail("`bazel version` returned version %s (expected %s)" %
+#         (ver, rctx.attr.version))
 
 def _bazel_repository_impl(rctx):
   _get_installer(rctx)
